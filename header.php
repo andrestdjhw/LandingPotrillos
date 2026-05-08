@@ -5,9 +5,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <?php wp_head(); ?>
   </head>
-  <body <?php body_class(); ?>>
-    <div class="bg-gray-300">
-      <div class="max-w-4xl mx-auto mb-5 px-4">
-        <h1 class="text-3xl py-10"><a href="<?php echo get_home_url(); ?>" class="hover:text-blue-500">Welcome To Our Header!</a></h1>
-      </div>
-    </div>
+  <body <?php body_class(); ?> style="margin:0; padding:0;">
+
+    <style>
+      /* From Uiverse.io by catraco */
+      .stripe-bg {
+        width: 100%;
+        height: 18px;
+        display: block;
+        background: repeating-linear-gradient(
+            -45deg,
+            orange,
+            orangered 10px,
+            orange 10px,
+            orangered 20px
+          )
+          orange;
+        background-blend-mode: screen;
+      }
+    </style>
+
+    <div class="stripe-bg"></div>
