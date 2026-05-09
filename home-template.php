@@ -2,8 +2,8 @@
 /* Template Name: Home */
 
 // ── Media Library video URLs ──────────────────────────────
-$video_restaurant = get_site_url() . '/wp-content/uploads/2026/05/RestaurantHero.mov';
-$video_foodtruck  = get_site_url() . '/wp-content/uploads/2026/05/FoodtrukHero.mov';
+$video_restaurant = get_site_url() . '/wp-content/uploads/2026/05/RestaurantHeroLanding.mp4';
+$video_foodtruck  = get_site_url() . '/wp-content/uploads/2026/05/FoodtruckHeroLanding.mp4';
 // ─────────────────────────────────────────────────────────
 
 get_header(); ?>
@@ -19,46 +19,58 @@ get_header(); ?>
     overflow: hidden;
   }
 
+  /* ── Headline card ── */
   .hero-headline {
     position: absolute;
     inset-inline: 0;
     top: 0;
     z-index: 20;
-    text-align: center;
-    padding: 3rem 2rem 2.5rem;
-    background: linear-gradient(to bottom, rgba(0,0,0,0.72) 60%, transparent);
+    display: flex;
+    justify-content: center;
+    padding: 2rem 2rem 0;
     pointer-events: none;
+  }
+
+  .hero-headline-card {
+    background: rgba(255, 255, 255, 0.12);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 18px;
+    padding: 1rem 2rem 0.85rem;
+    text-align: center;
+    max-width: clamp(600px, 50vw, 1000px);
+    width: 100%;
+  }
+
+  .hero-headline-logo {
+    width: clamp(70px, 7vw, 140px);
+    height: auto;
+    margin: 0 auto 0.85rem;
+    display: block;
+    filter: drop-shadow(0 2px 10px rgba(0,0,0,0.5));
   }
 
   .hero-headline h1 {
     font-family: 'Playfair Display', serif;
-    font-size: clamp(1.6rem, 3.5vw, 2.75rem);
+    font-size: clamp(1.4rem, 3vw, 3.5rem);
     font-weight: 800;
     font-style: italic;
     color: #D4AF37;
     letter-spacing: 0.01em;
     line-height: 1.15;
-    margin: 0 0 0.75rem;
-    text-shadow: 0 2px 20px rgba(0,0,0,0.6);
-  }
-
-  .hero-headline-logo {
-    width: clamp(80px, 10vw, 130px);
-    height: auto;
-    margin: 0 auto 1rem;
-    display: block;
-    filter: drop-shadow(0 2px 12px rgba(0,0,0,0.5));
+    margin: 0 0 0.4rem;
+    text-shadow: 0 2px 16px rgba(0,0,0,0.5);
   }
 
   .hero-headline p {
     font-family: 'Raleway', sans-serif;
-    font-size: clamp(0.85rem, 1.4vw, 1.05rem);
+    font-size: clamp(0.85rem, 1.2vw, 1.3rem);
     font-weight: 400;
-    color: rgba(255,255,255,0.82);
-    max-width: 640px;
-    margin: 0 auto;
+    color: rgba(255,255,255,0.85);
+    margin: 0;
     line-height: 1.6;
-    text-shadow: 0 1px 8px rgba(0,0,0,0.5);
+    text-shadow: 0 1px 6px rgba(0,0,0,0.5);
   }
 
   .hero-divider {
@@ -121,32 +133,24 @@ get_header(); ?>
   .hero-address {
     display: flex;
     flex-direction: column;
-    gap: 0.75rem;
+    gap: 0.85rem;
     background: rgba(255, 255, 255, 0.12);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
     border: 1px solid rgba(255, 255, 255, 0.25);
-    border-radius: 14px;
-    padding: 1.1rem 1.3rem;
-    max-width: 260px;
+    border-radius: 16px;
+    padding: clamp(1.75rem, 3vh, 3rem) clamp(1.5rem, 2.5vw, 3rem);
+    width: clamp(340px, 42vw, 760px);
     text-align: left;
-    opacity: 0;
-    transform: translateY(10px);
-    transition: opacity 0.4s ease 0.05s, transform 0.4s ease 0.05s;
-  }
-
-  .hero-half:hover .hero-address {
-    opacity: 1;
-    transform: translateY(0);
   }
 
   .hero-address-label {
     font-family: 'Playfair Display', serif;
-    font-size: 1.15rem;
+    font-size: clamp(1.25rem, 1.8vw, 2rem);
     font-weight: 700;
     color: #fff;
     text-shadow: 0 1px 6px rgba(0,0,0,0.4);
-    padding-bottom: 0.6rem;
+    padding-bottom: 0.65rem;
     border-bottom: 1px solid rgba(255,255,255,0.2);
   }
 
@@ -164,7 +168,7 @@ get_header(); ?>
 
   .hero-address-text {
     font-family: 'Raleway', sans-serif;
-    font-size: 0.78rem;
+    font-size: clamp(0.9rem, 1.1vw, 1.35rem);
     font-weight: 600;
     color: rgba(255,255,255,0.9);
     line-height: 1.5;
@@ -176,30 +180,21 @@ get_header(); ?>
   }
 
   .hero-address-text:hover {
-    color: #facc15;
-    text-decoration-color: #facc15;
+    color: #e53e3e;
+    text-decoration-color: #e53e3e;
   }
 
   /* ── Button wrapper ── */
   .hero-btn-wrap {
-    opacity: 0;
-    transform: translateY(14px);
-    transition: opacity 0.35s ease, transform 0.35s ease;
-    pointer-events: none;
-  }
-
-  .hero-half:hover .hero-btn-wrap {
-    opacity: 1;
-    transform: translateY(0);
     pointer-events: auto;
   }
 
-  /* ── Uiverse button by augustin_4687 ── */
+  /* ── Uiverse button — red variant ── */
   .button {
     --stone-50: #fafaf9;
     --stone-800: #292524;
-    --yellow-400: #facc15;
-    font-size: 1rem;
+    --accent: #e53e3e;
+    font-size: clamp(0.9rem, 1.1vw, 1.35rem);
     cursor: pointer;
     position: relative;
     font-family: "Rubik", sans-serif;
@@ -230,13 +225,13 @@ get_header(); ?>
       transform: translate(0, 0);
       box-shadow: 0 0 0 2px var(--stone-50);
     }
-    &:active, &:focus-visible { outline-color: var(--yellow-400); }
+    &:active, &:focus-visible { outline-color: var(--accent); }
     &:focus-visible { outline-style: dashed; }
 
     & > div {
       position: relative;
       pointer-events: none;
-      background-color: var(--yellow-400);
+      background-color: var(--accent);
       border: 2px solid rgba(255, 255, 255, 0.3);
       border-radius: 9999px;
 
@@ -260,9 +255,10 @@ get_header(); ?>
         display: flex;
         align-items: center;
         justify-content: center;
-        padding: 0.75rem 1.25rem;
+        padding: 0.75rem 1.5rem;
         gap: 0.25rem;
-        filter: drop-shadow(0 -1px 0 rgba(255, 255, 255, 0.25));
+        color: #fff;
+        filter: drop-shadow(0 -1px 0 rgba(0, 0, 0, 0.25));
         &:active { transform: translateY(2px); }
       }
     }
@@ -300,29 +296,33 @@ get_header(); ?>
     .hero-headline {
       position: static;
       background: #111;
-      padding: 2.25rem 1.5rem;
+      padding: 2rem 1.5rem;
     }
 
-    .hero-btn-wrap,
-    .hero-address {
-      opacity: 1;
-      transform: none;
-      pointer-events: auto;
+    .hero-headline-card {
+      border-radius: 0;
+      border: none;
+      background: transparent;
+      backdrop-filter: none;
     }
+
+
   }
 </style>
 
 <div class="hero-wrap">
 
-  <!-- Headline -->
+  <!-- Headline card -->
   <div class="hero-headline">
-    <img
-      src="<?php echo esc_url( get_site_url() . '/wp-content/uploads/2026/05/Horses-_WB-Photoroom.png' ); ?>"
-      alt="Los Potrillos"
-      class="hero-headline-logo"
-    >
-    <h1>Welcome to Los Potrillos Mexican Restaurant</h1>
-    <p>Experience authentic Mexican flavor made fresh daily. Choose how you want to enjoy Los Potrillos — whether dining in or bringing bold taste directly to your event.</p>
+    <div class="hero-headline-card">
+      <img
+        src="<?php echo esc_url( get_site_url() . '/wp-content/uploads/2026/05/Horses-_WB-Photoroom.png' ); ?>"
+        alt="Los Potrillos"
+        class="hero-headline-logo"
+      >
+      <h1>Welcome to Los Potrillos Mexican Restaurant</h1>
+      <p>Experience authentic Mexican flavor made fresh daily. Choose how you want to enjoy Los Potrillos whether dining in or bringing bold taste directly to your event.</p>
+    </div>
   </div>
 
   <!-- Divider -->
@@ -338,7 +338,7 @@ get_header(); ?>
       <div class="hero-address">
         <span class="hero-address-label">Visit Our Restaurant</span>
         <div class="hero-address-row">
-          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 1 1 16 0Z"/><circle cx="12" cy="10" r="3"/>
           </svg>
           <span
@@ -348,7 +348,7 @@ get_header(); ?>
         </div>
       </div>
       <div class="hero-btn-wrap">
-        <a href="https://restaurant.restaurantpotrillos.com/" target="_blank" rel="noopener noreferrer" class="button">
+        <a href="https://restaurant.restaurantpotrillos.com"  class="button">
           <div><span>Go to Restaurant</span></div>
         </a>
       </div>
@@ -365,7 +365,7 @@ get_header(); ?>
       <div class="hero-address">
         <span class="hero-address-label">Book Our Food Truck</span>
         <div class="hero-address-row">
-          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 1 1 16 0Z"/><circle cx="12" cy="10" r="3"/>
           </svg>
           <span
@@ -375,7 +375,7 @@ get_header(); ?>
         </div>
       </div>
       <div class="hero-btn-wrap">
-        <a href="https://foodtruck.restaurantpotrillos.com/" target="_blank" rel="noopener noreferrer" class="button">
+        <a href="https://foodtruck.restaurantpotrillos.com/"  class="button">
           <div><span>Go to Foodtruck</span></div>
         </a>
       </div>

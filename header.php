@@ -15,12 +15,12 @@
         display: block;
         background: repeating-linear-gradient(
             -45deg,
-            orange,
-            orangered 10px,
+            crimson,
+            darkred 10px,
             orange 10px,
-            orangered 20px
+            darkred 20px
           )
-          orange;
+          crimson;
         background-blend-mode: screen;
       }
     </style>
