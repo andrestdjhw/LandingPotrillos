@@ -8,20 +8,20 @@
   <body <?php body_class(); ?> style="margin:0; padding:0;">
 
     <style>
-      /* From Uiverse.io by catraco */
       .stripe-bg {
         width: 100%;
         height: 18px;
         display: block;
-        background: repeating-linear-gradient(
-            -45deg,
-            crimson,
-            darkred 10px,
-            orange 10px,
-            darkred 20px
-          )
-          crimson;
-        background-blend-mode: screen;
+        background: linear-gradient(
+          90deg,
+          #7B5A00,
+          #C8960C,
+          #F5D16A,
+          #D4AF37,
+          #F5D16A,
+          #C8960C,
+          #7B5A00
+        );
       }
     </style>
 
