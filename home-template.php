@@ -129,11 +129,11 @@ get_header(); ?>
     gap: 1.25rem;
   }
 
-  /* ── Address + title card ── */
+  /* ── Address card ── */
   .hero-address {
     display: flex;
     flex-direction: column;
-    gap: 0.85rem;
+    gap: 1rem;
     background: rgba(255, 255, 255, 0.12);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
@@ -152,6 +152,15 @@ get_header(); ?>
     text-shadow: 0 1px 6px rgba(0,0,0,0.4);
     padding-bottom: 0.65rem;
     border-bottom: 1px solid rgba(255,255,255,0.2);
+  }
+
+  /* Address + dock side by side */
+  .hero-address-body {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    flex-wrap: wrap;
   }
 
   .hero-address-row {
@@ -184,6 +193,60 @@ get_header(); ?>
     text-decoration-color: #e53e3e;
   }
 
+  /* ── Squircle dock ── */
+  .hero-dock {
+    position: relative;
+  }
+
+  .hero-dock-inner {
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.2);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-radius: 14px;
+    border: 1px solid rgba(255,255,255,0.1);
+    box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+  }
+
+  .hero-dock-items {
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    gap: clamp(0.4rem, 0.8vw, 0.6rem);
+    padding: clamp(0.4rem, 0.6vw, 0.6rem);
+  }
+
+  .dock-icon {
+    clip-path: url(#squircleClip);
+    width: clamp(42px, 4vw, 64px);
+    height: clamp(42px, 4vw, 64px);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transform: translateY(0) scale(1);
+    transition: transform 300ms cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 300ms ease;
+    text-decoration: none;
+    border: 1px solid rgba(255,255,255,0.15);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  }
+
+  .dock-icon:hover {
+    transform: scale(1.15) translateY(-8px);
+    box-shadow: 0 12px 28px rgba(0,0,0,0.4);
+  }
+
+  .dock-icon svg {
+    width: clamp(22px, 2.2vw, 34px);
+    height: clamp(22px, 2.2vw, 34px);
+  }
+
+  .dock-grubhub   { background: linear-gradient(135deg, #F63440, #c0392b); }
+  .dock-ubereats  { background: linear-gradient(135deg, #06C167, #04a052); }
+  .dock-doordash  { background: linear-gradient(135deg, #FF3008, #c0290a); }
+
   /* ── Button wrapper ── */
   .hero-btn-wrap {
     pointer-events: auto;
@@ -194,7 +257,7 @@ get_header(); ?>
     --stone-50: #fafaf9;
     --stone-800: #292524;
     --accent: #e53e3e;
-    font-size: clamp(0.9rem, 1.1vw, 1.35rem);
+    font-size: clamp(1rem, 1.1vw, 1.4rem);
     cursor: pointer;
     position: relative;
     font-family: "Rubik", sans-serif;
@@ -220,21 +283,18 @@ get_header(); ?>
       2px 2px 0 2px var(--stone-50), 2.5px 2.5px 0 2px var(--stone-50),
       3px 3px 0 2px var(--stone-50), 3.5px 3.5px 0 2px var(--stone-50),
       4px 4px 0 2px var(--stone-50);
-
     &:hover {
       transform: translate(0, 0);
       box-shadow: 0 0 0 2px var(--stone-50);
     }
     &:active, &:focus-visible { outline-color: var(--accent); }
     &:focus-visible { outline-style: dashed; }
-
     & > div {
       position: relative;
       pointer-events: none;
       background-color: var(--accent);
       border: 2px solid rgba(255, 255, 255, 0.3);
       border-radius: 9999px;
-
       &::before {
         content: "";
         position: absolute;
@@ -249,7 +309,6 @@ get_header(); ?>
         mix-blend-mode: hard-light;
         animation: dots 0.5s infinite linear;
       }
-
       & > span {
         position: relative;
         display: flex;
@@ -271,44 +330,25 @@ get_header(); ?>
 
   /* ── Mobile ── */
   @media (max-width: 640px) {
-    .hero-wrap {
-      flex-direction: column;
-      height: auto;
-    }
-
+    .hero-wrap { flex-direction: column; height: auto; }
     .hero-half,
     .hero-wrap:has(.hero-half:hover) .hero-half,
-    .hero-wrap .hero-half:hover {
-      flex: none;
-      height: 50vh;
-      min-height: 280px;
-    }
-
-    .hero-divider {
-      inset-block: auto;
-      left: 0; right: 0;
-      top: 50%;
-      width: 100%;
-      height: 3px;
-      transform: translateY(-50%);
-    }
-
-    .hero-headline {
-      position: static;
-      background: #111;
-      padding: 2rem 1.5rem;
-    }
-
-    .hero-headline-card {
-      border-radius: 0;
-      border: none;
-      background: transparent;
-      backdrop-filter: none;
-    }
-
-
+    .hero-wrap .hero-half:hover { flex: none; height: 50vh; min-height: 280px; }
+    .hero-divider { inset-block: auto; left: 0; right: 0; top: 50%; width: 100%; height: 3px; transform: translateY(-50%); }
+    .hero-headline { position: static; background: #111; padding: 2rem 1.5rem; }
+    .hero-headline-card { border-radius: 0; border: none; background: transparent; backdrop-filter: none; }
+    .hero-address-body { flex-direction: column; }
   }
 </style>
+
+<!-- Squircle clip path -->
+<svg width="0" height="0" style="position:absolute;">
+  <defs>
+    <clipPath id="squircleClip" clipPathUnits="objectBoundingBox">
+      <path d="M 0,0.5 C 0,0 0,0 0.5,0 S 1,0 1,0.5 1,1 0.5,1 0,1 0,0.5"></path>
+    </clipPath>
+  </defs>
+</svg>
 
 <div class="hero-wrap">
 
@@ -337,18 +377,47 @@ get_header(); ?>
     <div class="hero-content">
       <div class="hero-address">
         <span class="hero-address-label">Visit Our Restaurant</span>
-        <div class="hero-address-row">
-          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 1 1 16 0Z"/><circle cx="12" cy="10" r="3"/>
-          </svg>
-          <span
-            class="hero-address-text"
-            onclick="window.open('https://maps.app.goo.gl/uMSnemyj73JfEq5u9', '_blank');"
-          >2617 E Venango St,<br>Philadelphia, PA 19134</span>
+        <div class="hero-address-body">
+          <div class="hero-address-row">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 1 1 16 0Z"/><circle cx="12" cy="10" r="3"/>
+            </svg>
+            <span class="hero-address-text" onclick="window.open('https://maps.app.goo.gl/uMSnemyj73JfEq5u9', '_blank');">
+              2617 E Venango St,<br>Philadelphia, PA 19134
+            </span>
+          </div>
+          <!-- Delivery dock -->
+          <div class="hero-dock">
+            <div class="hero-dock-inner"></div>
+            <div class="hero-dock-items">
+              <a href="https://www.grubhub.com/restaurant/los-potrillos-restaurant-2617-e-venango-st-philadelphia/1939231/reviews" target="_blank" rel="noopener noreferrer" class="dock-icon dock-grubhub" title="Grubhub">
+                <svg viewBox="0 0 64 64" fill="white" xmlns="http://www.w3.org/2000/svg" style="width:clamp(22px,2.2vw,34px);height:clamp(22px,2.2vw,34px);">
+                  <!-- Fork left tine -->
+                  <rect x="10" y="6" width="5" height="22" rx="2.5"/>
+                  <!-- Fork middle tine -->
+                  <rect x="20" y="6" width="5" height="22" rx="2.5"/>
+                  <!-- Fork right tine -->
+                  <rect x="30" y="6" width="5" height="22" rx="2.5"/>
+                  <!-- Fork handle neck -->
+                  <rect x="18" y="28" width="9" height="6" rx="1"/>
+                  <!-- Fork handle -->
+                  <rect x="19.5" y="34" width="6" height="24" rx="3"/>
+                  <!-- G letter -->
+                  <path d="M44 14 A14 14 0 1 0 58 28 L58 28 L48 28 L48 32 L54 32 A8 8 0 1 1 46 20" stroke="white" stroke-width="4" fill="none" stroke-linecap="round"/>
+                </svg>
+              </a>
+              <a href="https://www.ubereats.com/store/los-potrillos-restaurant/8f90E8-GRHOnsfKh0Y7SQQ" target="_blank" rel="noopener noreferrer" class="dock-icon dock-ubereats" title="Uber Eats">
+                <img src="https://cdn.simpleicons.org/ubereats/white" alt="Uber Eats" style="width:clamp(22px,2.2vw,34px);height:clamp(22px,2.2vw,34px);">
+              </a>
+              <a href="https://www.doordash.com/store/los-potrillos-restaurant-food-truck-philadelphia-842516/1198297/" target="_blank" rel="noopener noreferrer" class="dock-icon dock-doordash" title="DoorDash">
+                <img src="https://cdn.simpleicons.org/doordash/white" alt="DoorDash" style="width:clamp(22px,2.2vw,34px);height:clamp(22px,2.2vw,34px);">
+              </a>
+            </div>
+          </div>
         </div>
       </div>
       <div class="hero-btn-wrap">
-        <a href="https://restaurant.restaurantpotrillos.com"  class="button">
+        <a href="https://restaurant.restaurantpotrillos.com" class="button">
           <div><span>Go to Restaurant</span></div>
         </a>
       </div>
@@ -363,19 +432,48 @@ get_header(); ?>
     <div class="hero-overlay"></div>
     <div class="hero-content">
       <div class="hero-address">
-        <span class="hero-address-label">Visit Our Foodtruck</span>
-        <div class="hero-address-row">
-          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 1 1 16 0Z"/><circle cx="12" cy="10" r="3"/>
-          </svg>
-          <span
-            class="hero-address-text"
-            onclick="window.open('https://maps.app.goo.gl/JwvzJ9QGCqqTcsX4A', '_blank');"
-          >4200 G St,<br>Philadelphia, PA 19124</span>
+        <span class="hero-address-label">Visit Our Food Truck</span>
+        <div class="hero-address-body">
+          <div class="hero-address-row">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 1 1 16 0Z"/><circle cx="12" cy="10" r="3"/>
+            </svg>
+            <span class="hero-address-text" onclick="window.open('https://maps.app.goo.gl/JwvzJ9QGCqqTcsX4A', '_blank');">
+              4200 G St,<br>Philadelphia, PA 19124
+            </span>
+          </div>
+          <!-- Delivery dock -->
+          <div class="hero-dock">
+            <div class="hero-dock-inner"></div>
+            <div class="hero-dock-items">
+              <a href="https://www.grubhub.com/restaurant/los-potrillos-restaurant-2617-e-venango-st-philadelphia/1939231/reviews" target="_blank" rel="noopener noreferrer" class="dock-icon dock-grubhub" title="Grubhub">
+                <svg viewBox="0 0 64 64" fill="white" xmlns="http://www.w3.org/2000/svg" style="width:clamp(22px,2.2vw,34px);height:clamp(22px,2.2vw,34px);">
+                  <!-- Fork left tine -->
+                  <rect x="10" y="6" width="5" height="22" rx="2.5"/>
+                  <!-- Fork middle tine -->
+                  <rect x="20" y="6" width="5" height="22" rx="2.5"/>
+                  <!-- Fork right tine -->
+                  <rect x="30" y="6" width="5" height="22" rx="2.5"/>
+                  <!-- Fork handle neck -->
+                  <rect x="18" y="28" width="9" height="6" rx="1"/>
+                  <!-- Fork handle -->
+                  <rect x="19.5" y="34" width="6" height="24" rx="3"/>
+                  <!-- G letter -->
+                  <path d="M44 14 A14 14 0 1 0 58 28 L58 28 L48 28 L48 32 L54 32 A8 8 0 1 1 46 20" stroke="white" stroke-width="4" fill="none" stroke-linecap="round"/>
+                </svg>
+              </a>
+              <a href="https://www.ubereats.com/store/los-potrillos-restaurant/8f90E8-GRHOnsfKh0Y7SQQ" target="_blank" rel="noopener noreferrer" class="dock-icon dock-ubereats" title="Uber Eats">
+                <img src="https://cdn.simpleicons.org/ubereats/white" alt="Uber Eats" style="width:clamp(22px,2.2vw,34px);height:clamp(22px,2.2vw,34px);">
+              </a>
+              <a href="https://www.doordash.com/store/los-potrillos-restaurant-food-truck-philadelphia-842516/1198297/" target="_blank" rel="noopener noreferrer" class="dock-icon dock-doordash" title="DoorDash">
+                <img src="https://cdn.simpleicons.org/doordash/white" alt="DoorDash" style="width:clamp(22px,2.2vw,34px);height:clamp(22px,2.2vw,34px);">
+              </a>
+            </div>
+          </div>
         </div>
       </div>
       <div class="hero-btn-wrap">
-        <a href="https://foodtruck.restaurantpotrillos.com/"  class="button">
+        <a href="https://foodtruck.restaurantpotrillos.com/" class="button">
           <div><span>Go to Foodtruck</span></div>
         </a>
       </div>
