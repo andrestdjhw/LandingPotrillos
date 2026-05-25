@@ -446,7 +446,7 @@ get_header(); ?>
           <div class="hero-dock">
             <div class="hero-dock-inner"></div>
             <div class="hero-dock-items">
-              <a href="https://www.grubhub.com/restaurant/los-potrillos-restaurant-2617-e-venango-st-philadelphia/1939231/reviews" target="_blank" rel="noopener noreferrer" class="dock-icon dock-grubhub" title="Grubhub">
+              <a href="https://www.grubhub.com/restaurant/los-potrillos-food-truck-4200-g-st-philadelphia/4890216?utm_source=grubhub_web&utm_medium=content_owned&utm_campaign=menushare&utm_content=share-link" target="_blank" rel="noopener noreferrer" class="dock-icon dock-grubhub" title="Grubhub">
                 <svg viewBox="0 0 64 64" fill="white" xmlns="http://www.w3.org/2000/svg" style="width:clamp(22px,2.2vw,34px);height:clamp(22px,2.2vw,34px);">
                   <!-- Fork left tine -->
                   <rect x="10" y="6" width="5" height="22" rx="2.5"/>
@@ -462,10 +462,10 @@ get_header(); ?>
                   <path d="M44 14 A14 14 0 1 0 58 28 L58 28 L48 28 L48 32 L54 32 A8 8 0 1 1 46 20" stroke="white" stroke-width="4" fill="none" stroke-linecap="round"/>
                 </svg>
               </a>
-              <a href="https://www.ubereats.com/store/los-potrillos-restaurant/8f90E8-GRHOnsfKh0Y7SQQ" target="_blank" rel="noopener noreferrer" class="dock-icon dock-ubereats" title="Uber Eats">
+              <a href="https://www.ubereats.com/store/los-potrillos-food-truck/fB6ez1DxQW6AytoOpy1fKg?diningMode=PICKUP&pl=JTdCJTIyYWRkcmVzcyUyMiUzQSUyMjQlMjBWZW50dXJlJTIyJTJDJTIycmVmZXJlbmNlJTIyJTNBJTIyYWQ1MDJkMmQtMzdmMC0xYzlkLWJhODgtY2UxMzY5ZmI5MzM3JTIyJTJDJTIycmVmZXJlbmNlVHlwZSUyMiUzQSUyMnViZXJfcGxhY2VzJTIyJTJDJTIybGF0aXR1ZGUlMjIlM0EzMy42NTkwODIlMkMlMjJsb25naXR1ZGUlMjIlM0EtMTE3Ljc1MjQyNiU3RA%3D%3D&rwg_token=AFd1xnFfG_3axEf4FxmOgsDRDyDS_i7oXyfc_dkZ90M2bHzovEv9Tp1gk6vZqE9rQghtZ-D5E5LC6Ls4uDEVYB7vzlycEU46Ew%3D%3D&utm_campaign=CM2508147-search-free-nonbrand-google-pas_e_all_acq_Global&utm_medium=search-free-nonbrand&utm_source=google-pas" target="_blank" rel="noopener noreferrer" class="dock-icon dock-ubereats" title="Uber Eats">
                 <img src="https://cdn.simpleicons.org/ubereats/white" alt="Uber Eats" style="width:clamp(22px,2.2vw,34px);height:clamp(22px,2.2vw,34px);">
               </a>
-              <a href="https://www.doordash.com/store/los-potrillos-restaurant-food-truck-philadelphia-842516/1198297/" target="_blank" rel="noopener noreferrer" class="dock-icon dock-doordash" title="DoorDash">
+              <a href="https://www.doordash.com/store/los-potrillos-restaurant-food-truck-philadelphia-842516/1198297/?pickup=true&rwg_token=AFd1xnGuYRY_WjUsJ07zPTnXscCUAo2l-cSGhnRjDckfvWBvDiYrl-I3uTuXFn_Eky7PmjKMLQ7BLEYv8ZfrwsVfgCUGS5FnZw==&utm_campaign=gpa" target="_blank" rel="noopener noreferrer" class="dock-icon dock-doordash" title="DoorDash">
                 <img src="https://cdn.simpleicons.org/doordash/white" alt="DoorDash" style="width:clamp(22px,2.2vw,34px);height:clamp(22px,2.2vw,34px);">
               </a>
             </div>
