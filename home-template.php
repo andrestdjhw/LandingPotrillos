@@ -390,6 +390,17 @@ get_header(); ?>
           <div class="hero-dock">
             <div class="hero-dock-inner"></div>
             <div class="hero-dock-items">
+              <a href="https://fromtherestaurant.com/los-potrillos-restaurant/locations/" target="_blank" rel="noopener noreferrer" class="dock-icon dock-grubhub" title="Menú">
+                <svg viewBox="0 0 64 64" fill="white" xmlns="http://www.w3.org/2000/svg" style="width:clamp(22px,2.2vw,34px);height:clamp(22px,2.2vw,34px);">
+                  <rect x="16.8" y="8" width="2.6" height="13" rx="1.3"/>
+                  <rect x="20.7" y="8" width="2.6" height="13" rx="1.3"/>
+                  <rect x="24.6" y="8" width="2.6" height="13" rx="1.3"/>
+                  <rect x="16.8" y="19" width="10.4" height="5" rx="2.5"/>
+                  <rect x="20" y="23" width="4" height="33" rx="2"/>
+                  <path d="M45 33 L45 12 Q45 8 42 8 Q40 11 40 21 L40 33 Z"/>
+                  <rect x="40" y="31" width="5" height="25" rx="2.5"/>
+                </svg>
+              </a>
               <a href="https://www.grubhub.com/restaurant/los-potrillos-restaurant-2617-e-venango-st-philadelphia/1939231/reviews" target="_blank" rel="noopener noreferrer" class="dock-icon dock-grubhub" title="Grubhub">
                 <svg viewBox="0 0 64 64" fill="white" xmlns="http://www.w3.org/2000/svg" style="width:clamp(22px,2.2vw,34px);height:clamp(22px,2.2vw,34px);">
                   <!-- Fork left tine -->
@@ -446,20 +457,15 @@ get_header(); ?>
           <div class="hero-dock">
             <div class="hero-dock-inner"></div>
             <div class="hero-dock-items">
-              <a href="https://www.grubhub.com/restaurant/los-potrillos-food-truck-4200-g-st-philadelphia/4890216?utm_source=grubhub_web&utm_medium=content_owned&utm_campaign=menushare&utm_content=share-link" target="_blank" rel="noopener noreferrer" class="dock-icon dock-grubhub" title="Grubhub">
+              <a href="https://share.google/ZJrutDPtyilmuAzQX" target="_blank" rel="noopener noreferrer" class="dock-icon dock-grubhub" title="Menú">
                 <svg viewBox="0 0 64 64" fill="white" xmlns="http://www.w3.org/2000/svg" style="width:clamp(22px,2.2vw,34px);height:clamp(22px,2.2vw,34px);">
-                  <!-- Fork left tine -->
-                  <rect x="10" y="6" width="5" height="22" rx="2.5"/>
-                  <!-- Fork middle tine -->
-                  <rect x="20" y="6" width="5" height="22" rx="2.5"/>
-                  <!-- Fork right tine -->
-                  <rect x="30" y="6" width="5" height="22" rx="2.5"/>
-                  <!-- Fork handle neck -->
-                  <rect x="18" y="28" width="9" height="6" rx="1"/>
-                  <!-- Fork handle -->
-                  <rect x="19.5" y="34" width="6" height="24" rx="3"/>
-                  <!-- G letter -->
-                  <path d="M44 14 A14 14 0 1 0 58 28 L58 28 L48 28 L48 32 L54 32 A8 8 0 1 1 46 20" stroke="white" stroke-width="4" fill="none" stroke-linecap="round"/>
+                  <rect x="16.8" y="8" width="2.6" height="13" rx="1.3"/>
+                  <rect x="20.7" y="8" width="2.6" height="13" rx="1.3"/>
+                  <rect x="24.6" y="8" width="2.6" height="13" rx="1.3"/>
+                  <rect x="16.8" y="19" width="10.4" height="5" rx="2.5"/>
+                  <rect x="20" y="23" width="4" height="33" rx="2"/>
+                  <path d="M45 33 L45 12 Q45 8 42 8 Q40 11 40 21 L40 33 Z"/>
+                  <rect x="40" y="31" width="5" height="25" rx="2.5"/>
                 </svg>
               </a>
               <a href="https://www.ubereats.com/store/los-potrillos-food-truck/fB6ez1DxQW6AytoOpy1fKg?diningMode=PICKUP&pl=JTdCJTIyYWRkcmVzcyUyMiUzQSUyMjQlMjBWZW50dXJlJTIyJTJDJTIycmVmZXJlbmNlJTIyJTNBJTIyYWQ1MDJkMmQtMzdmMC0xYzlkLWJhODgtY2UxMzY5ZmI5MzM3JTIyJTJDJTIycmVmZXJlbmNlVHlwZSUyMiUzQSUyMnViZXJfcGxhY2VzJTIyJTJDJTIybGF0aXR1ZGUlMjIlM0EzMy42NTkwODIlMkMlMjJsb25naXR1ZGUlMjIlM0EtMTE3Ljc1MjQyNiU3RA%3D%3D&rwg_token=AFd1xnFfG_3axEf4FxmOgsDRDyDS_i7oXyfc_dkZ90M2bHzovEv9Tp1gk6vZqE9rQghtZ-D5E5LC6Ls4uDEVYB7vzlycEU46Ew%3D%3D&utm_campaign=CM2508147-search-free-nonbrand-google-pas_e_all_acq_Global&utm_medium=search-free-nonbrand&utm_source=google-pas" target="_blank" rel="noopener noreferrer" class="dock-icon dock-ubereats" title="Uber Eats">
