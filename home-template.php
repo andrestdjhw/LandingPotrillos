@@ -243,6 +243,7 @@ get_header(); ?>
     height: clamp(22px, 2.2vw, 34px);
   }
 
+  .dock-menufy    { background: linear-gradient(135deg, #FF9012, #E8730B); }
   .dock-grubhub   { background: linear-gradient(135deg, #F63440, #c0392b); }
   .dock-ubereats  { background: linear-gradient(135deg, #06C167, #04a052); }
   .dock-doordash  { background: linear-gradient(135deg, #FF3008, #c0290a); }
@@ -401,6 +402,14 @@ get_header(); ?>
                   <rect x="40" y="31" width="5" height="25" rx="2.5"/>
                 </svg>
               </a>
+              <a href="https://share.google/ZJrutDPtyilmuAzQX" target="_blank" rel="noopener noreferrer" class="dock-icon dock-menufy" title="Ordenar en línea">
+                <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" style="width:clamp(22px,2.2vw,34px);height:clamp(22px,2.2vw,34px);">
+                  <rect x="16" y="8" width="32" height="48" rx="4" stroke="white" stroke-width="3.5"/>
+                  <line x1="23" y1="21" x2="41" y2="21" stroke="white" stroke-width="3.5" stroke-linecap="round"/>
+                  <line x1="23" y1="31" x2="41" y2="31" stroke="white" stroke-width="3.5" stroke-linecap="round"/>
+                  <line x1="23" y1="41" x2="34" y2="41" stroke="white" stroke-width="3.5" stroke-linecap="round"/>
+                </svg>
+              </a>
               <a href="https://www.grubhub.com/restaurant/los-potrillos-restaurant-2617-e-venango-st-philadelphia/1939231/reviews" target="_blank" rel="noopener noreferrer" class="dock-icon dock-grubhub" title="Grubhub">
                 <svg viewBox="0 0 64 64" fill="white" xmlns="http://www.w3.org/2000/svg" style="width:clamp(22px,2.2vw,34px);height:clamp(22px,2.2vw,34px);">
                   <!-- Fork left tine -->
@@ -457,7 +466,7 @@ get_header(); ?>
           <div class="hero-dock">
             <div class="hero-dock-inner"></div>
             <div class="hero-dock-items">
-              <a href="https://share.google/ZJrutDPtyilmuAzQX" target="_blank" rel="noopener noreferrer" class="dock-icon dock-grubhub" title="Menú">
+              <a href="https://fromtherestaurant.com/los-potrillos-restaurant/locations/" target="_blank" rel="noopener noreferrer" class="dock-icon dock-grubhub" title="Menú">
                 <svg viewBox="0 0 64 64" fill="white" xmlns="http://www.w3.org/2000/svg" style="width:clamp(22px,2.2vw,34px);height:clamp(22px,2.2vw,34px);">
                   <rect x="16.8" y="8" width="2.6" height="13" rx="1.3"/>
                   <rect x="20.7" y="8" width="2.6" height="13" rx="1.3"/>
@@ -466,6 +475,14 @@ get_header(); ?>
                   <rect x="20" y="23" width="4" height="33" rx="2"/>
                   <path d="M45 33 L45 12 Q45 8 42 8 Q40 11 40 21 L40 33 Z"/>
                   <rect x="40" y="31" width="5" height="25" rx="2.5"/>
+                </svg>
+              </a>
+              <a href="https://share.google/ZJrutDPtyilmuAzQX" target="_blank" rel="noopener noreferrer" class="dock-icon dock-menufy" title="Ordenar en línea">
+                <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" style="width:clamp(22px,2.2vw,34px);height:clamp(22px,2.2vw,34px);">
+                  <rect x="16" y="8" width="32" height="48" rx="4" stroke="white" stroke-width="3.5"/>
+                  <line x1="23" y1="21" x2="41" y2="21" stroke="white" stroke-width="3.5" stroke-linecap="round"/>
+                  <line x1="23" y1="31" x2="41" y2="31" stroke="white" stroke-width="3.5" stroke-linecap="round"/>
+                  <line x1="23" y1="41" x2="34" y2="41" stroke="white" stroke-width="3.5" stroke-linecap="round"/>
                 </svg>
               </a>
               <a href="https://www.ubereats.com/store/los-potrillos-food-truck/fB6ez1DxQW6AytoOpy1fKg?diningMode=PICKUP&pl=JTdCJTIyYWRkcmVzcyUyMiUzQSUyMjQlMjBWZW50dXJlJTIyJTJDJTIycmVmZXJlbmNlJTIyJTNBJTIyYWQ1MDJkMmQtMzdmMC0xYzlkLWJhODgtY2UxMzY5ZmI5MzM3JTIyJTJDJTIycmVmZXJlbmNlVHlwZSUyMiUzQSUyMnViZXJfcGxhY2VzJTIyJTJDJTIybGF0aXR1ZGUlMjIlM0EzMy42NTkwODIlMkMlMjJsb25naXR1ZGUlMjIlM0EtMTE3Ljc1MjQyNiU3RA%3D%3D&rwg_token=AFd1xnFfG_3axEf4FxmOgsDRDyDS_i7oXyfc_dkZ90M2bHzovEv9Tp1gk6vZqE9rQghtZ-D5E5LC6Ls4uDEVYB7vzlycEU46Ew%3D%3D&utm_campaign=CM2508147-search-free-nonbrand-google-pas_e_all_acq_Global&utm_medium=search-free-nonbrand&utm_source=google-pas" target="_blank" rel="noopener noreferrer" class="dock-icon dock-ubereats" title="Uber Eats">
