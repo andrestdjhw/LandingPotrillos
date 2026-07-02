@@ -411,19 +411,8 @@ get_header(); ?>
                 </svg>
               </a>
               <a href="https://www.grubhub.com/restaurant/los-potrillos-restaurant-2617-e-venango-st-philadelphia/1939231/reviews" target="_blank" rel="noopener noreferrer" class="dock-icon dock-grubhub" title="Grubhub">
-                <svg viewBox="0 0 64 64" fill="white" xmlns="http://www.w3.org/2000/svg" style="width:clamp(22px,2.2vw,34px);height:clamp(22px,2.2vw,34px);">
-                  <!-- Fork left tine -->
-                  <rect x="10" y="6" width="5" height="22" rx="2.5"/>
-                  <!-- Fork middle tine -->
-                  <rect x="20" y="6" width="5" height="22" rx="2.5"/>
-                  <!-- Fork right tine -->
-                  <rect x="30" y="6" width="5" height="22" rx="2.5"/>
-                  <!-- Fork handle neck -->
-                  <rect x="18" y="28" width="9" height="6" rx="1"/>
-                  <!-- Fork handle -->
-                  <rect x="19.5" y="34" width="6" height="24" rx="3"/>
-                  <!-- G letter -->
-                  <path d="M44 14 A14 14 0 1 0 58 28 L58 28 L48 28 L48 32 L54 32 A8 8 0 1 1 46 20" stroke="white" stroke-width="4" fill="none" stroke-linecap="round"/>
+                <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" style="width:clamp(22px,2.2vw,34px);height:clamp(22px,2.2vw,34px);">
+                  <path d="M13.79 7.3c-4.267 0-7.86 1.422-10.232 4.03C.95 13.937 0 17.73 0 22.274V42.03c0 4.267.95 8.298 3.556 10.943 2.607 2.607 6.163 4.03 10.232 4.03 4.267 0 7.86-1.422 10.232-4.03 2.607-2.607 3.556-6.4 3.556-10.943V31.125a1.03 1.03 0 0 0-.949-.949H14.5a1.03 1.03 0 0 0-.949.949v8.1a1.03 1.03 0 0 0 .949.949h3.12v1.896c0 1.66-.472 3.122-1.185 4.03-.71.95-1.66 1.185-2.845 1.185-1.07.001-2.094-.425-2.845-1.185-.71-.95-1.185-2.37-1.185-4.03V22.53c0-1.66.472-3.12 1.185-4.03.71-.95 1.66-1.185 2.845-1.185 1.07-.001 2.094.425 2.845 1.185.71.95 1.185 2.37 1.185 4.03v1.896c0 .472.472.71.71.71h8.298c.472 0 .71-.215.71-.71V22.53c0-4.267-.95-8.298-3.556-10.943-2.135-2.884-5.966-4.306-9.996-4.306m49.506.966H54.99c-.472 0-.71.472-.71.71V27.01h-8.298V8.955c0-.472-.472-.71-.71-.71h-8.298c-.472 0-.71.472-.71.71v46.34c0 .472.472.71.71.71h8.298c.472 0 .71-.472.71-.71V36.764h8.298v18.532c0 .472.472.71.71.71h8.298c.472 0 .71-.472.71-.71V8.955c0-.215-.215-.71-.71-.71" fill="white"/>
                 </svg>
               </a>
               <a href="https://www.ubereats.com/store/los-potrillos-restaurant/8f90E8-GRHOnsfKh0Y7SQQ" target="_blank" rel="noopener noreferrer" class="dock-icon dock-ubereats" title="Uber Eats">
