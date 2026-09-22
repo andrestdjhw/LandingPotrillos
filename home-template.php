@@ -9,93 +9,112 @@ $video_foodtruck  = get_site_url() . '/wp-content/uploads/2026/05/FoodtruckHeroL
 get_header(); ?>
 
 <style>
-  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,800;1,700&family=Raleway:wght@400;600;700&family=Rubik:wght@700&display=swap');
-
+  /* ── Hero: headline + two location cards ── */
   .hero-wrap {
     position: relative;
     display: flex;
-    height: calc(100vh - 36px);
-    min-height: calc(600px - 36px);
+    flex-direction: column;
+    min-height: 100vh;
+    min-height: 100svh;
+    padding: clamp(1rem, 2.5vh, 2rem) clamp(1rem, 4vw, 4rem) clamp(1rem, 3vh, 2.5rem);
+    box-sizing: border-box;
+    background: linear-gradient(135deg, var(--lp-cream) 0%, var(--lp-cream-2) 50%, var(--lp-cream-3) 100%);
     overflow: hidden;
   }
 
-  /* ── Headline card ── */
-  .hero-headline {
+  /* ── Corner watermarks ── */
+  .hero-watermark {
     position: absolute;
-    inset-inline: 0;
-    top: 0;
-    z-index: 20;
+    width: clamp(180px, 20vw, 340px);
+    height: auto;
+    opacity: 0.07;
+    pointer-events: none;
+    z-index: 0;
+    filter: grayscale(1) brightness(0.35);
+  }
+  .hero-watermark--tl { top: clamp(-40px, -3vw, -20px); left: clamp(-40px, -3vw, -20px); transform: rotate(-10deg); }
+  .hero-watermark--tr { top: clamp(-40px, -3vw, -20px); right: clamp(-40px, -3vw, -20px); transform: rotate(10deg) scaleX(-1); }
+  .hero-watermark--bl { bottom: clamp(-40px, -3vw, -20px); left: clamp(-40px, -3vw, -20px); transform: rotate(10deg); }
+  .hero-watermark--br { bottom: clamp(-40px, -3vw, -20px); right: clamp(-40px, -3vw, -20px); transform: rotate(-10deg) scaleX(-1); }
+
+  @media (max-width: 760px) {
+    .hero-watermark { width: clamp(120px, 40vw, 220px); }
+  }
+
+  .hero-headline {
+    position: relative;
+    z-index: 1;
+    max-width: 1280px;
+    width: 100%;
+    margin: 0 auto clamp(0.75rem, 2vh, 1.5rem);
     display: flex;
     justify-content: center;
-    padding: 2rem 2rem 0;
-    pointer-events: none;
-  }
-
-  .hero-headline-card {
-    background: rgba(255, 255, 255, 0.12);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    border: 1px solid rgba(255, 255, 255, 0.25);
-    border-radius: 18px;
-    padding: 1rem 2rem 0.85rem;
     text-align: center;
-    max-width: clamp(600px, 50vw, 1000px);
-    width: 100%;
   }
 
-  .hero-headline-logo {
-    width: clamp(70px, 7vw, 140px);
-    height: auto;
-    margin: 0 auto 0.85rem;
-    display: block;
-    filter: drop-shadow(0 2px 10px rgba(0,0,0,0.5));
-  }
+  .hero-headline-card { max-width: 46rem; }
+  .hero-headline .lp-eyebrow { display: block; margin-bottom: 0.75rem; }
 
   .hero-headline h1 {
-    font-family: 'Playfair Display', serif;
-    font-size: clamp(1.4rem, 3vw, 3.5rem);
-    font-weight: 800;
-    font-style: italic;
-    color: #D4AF37;
-    letter-spacing: 0.01em;
-    line-height: 1.15;
-    margin: 0 0 0.4rem;
-    text-shadow: 0 2px 16px rgba(0,0,0,0.5);
+    font-family: 'Oswald', sans-serif;
+    font-size: clamp(2.2rem, min(5vw, 9vh), 5rem);
+    font-weight: 700;
+    text-transform: uppercase;
+    color: var(--lp-brown);
+    line-height: 0.98;
+    margin: 0 0 0.6rem;
   }
+  .hero-headline h1 em { font-style: normal; color: var(--lp-red); display: block; }
 
   .hero-headline p {
-    font-family: 'Raleway', sans-serif;
-    font-size: clamp(0.85rem, 1.2vw, 1.3rem);
-    font-weight: 400;
-    color: rgba(255,255,255,0.85);
-    margin: 0;
-    line-height: 1.6;
-    text-shadow: 0 1px 6px rgba(0,0,0,0.5);
+    font-size: clamp(0.95rem, 1.15vw, 1.1rem);
+    font-weight: 500;
+    color: #4a3a32;
+    margin: 0 auto;
+    line-height: 1.5;
+    max-width: 34rem;
   }
 
-  .hero-divider {
-    position: absolute;
-    inset-block: 0;
-    left: 50%;
-    width: 3px;
-    background: rgba(255,255,255,0.35);
-    z-index: 15;
-    transform: translateX(-50%);
-    transition: opacity 0.4s ease;
-  }
-
-  .hero-half {
-    flex: 1;
+  .hero-grid {
     position: relative;
-    overflow: hidden;
-    cursor: pointer;
-    transition: flex 0.65s cubic-bezier(0.77, 0, 0.175, 1);
-    display: block;
+    z-index: 1;
+    flex: 1;
+    min-height: 0;
+    width: 100%;
+    max-width: 1280px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: clamp(1rem, 2vw, 2rem);
   }
 
-  .hero-wrap:has(.hero-half:hover) .hero-half { flex: 0.55; }
-  .hero-wrap .hero-half:hover                 { flex: 1.45; }
-  .hero-wrap:has(.hero-half:hover) .hero-divider { opacity: 0; }
+  /* Card = media on top, white info panel below */
+  .hero-half {
+    display: flex;
+    flex-direction: column;
+    background: #fff;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 14px 40px rgba(43,26,19,0.18);
+    transition: transform 0.35s ease, box-shadow 0.35s ease;
+  }
+  .hero-half:hover { transform: translateY(-6px); box-shadow: 0 22px 54px rgba(43,26,19,0.26); }
+
+  .hero-media {
+    position: relative;
+    flex: 1;
+    min-height: 200px;
+    overflow: hidden;
+    background: var(--lp-brown);
+  }
+  .hero-media::after {
+    content: "";
+    position: absolute;
+    inset-inline: 0;
+    bottom: 0;
+    height: 5px;
+    background: var(--lp-red);
+  }
 
   .hero-video {
     position: absolute;
@@ -103,95 +122,61 @@ get_header(); ?>
     width: 100%;
     height: 100%;
     object-fit: cover;
-    object-position: center;
-    transition: transform 0.65s cubic-bezier(0.77, 0, 0.175, 1);
+    transition: transform 0.6s ease;
   }
-
-  .hero-half:hover .hero-video { transform: scale(1.06); }
+  .hero-half:hover .hero-video { transform: scale(1.05); }
 
   .hero-overlay {
     position: absolute;
     inset: 0;
-    background: rgba(0,0,0,0.48);
-    transition: background 0.45s ease;
+    background: linear-gradient(180deg, rgba(43,26,19,0) 55%, rgba(43,26,19,0.35));
   }
-
-  .hero-half:hover .hero-overlay { background: rgba(0,0,0,0.28); }
 
   .hero-content {
-    position: absolute;
-    inset: 0;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: flex-end;
-    padding-bottom: clamp(2.5rem, 6vh, 5rem);
-    gap: 1.25rem;
+    text-align: center;
+    gap: 1rem;
+    padding: clamp(1rem, 2vh, 1.5rem) clamp(1.25rem, 2vw, 2rem);
   }
 
-  /* ── Address card ── */
-  .hero-address {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    background: rgba(255, 255, 255, 0.12);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.25);
-    border-radius: 16px;
-    padding: clamp(1.75rem, 3vh, 3rem) clamp(1.5rem, 2.5vw, 3rem);
-    width: clamp(340px, 42vw, 760px);
-    text-align: left;
-  }
+  /* ── Address block ── */
+  .hero-address { display: flex; flex-direction: column; align-items: center; gap: 0.85rem; width: 100%; }
 
   .hero-address-label {
-    font-family: 'Playfair Display', serif;
-    font-size: clamp(1.25rem, 1.8vw, 2rem);
+    font-family: 'Oswald', sans-serif;
+    font-size: clamp(1.2rem, 1.7vw, 1.7rem);
     font-weight: 700;
-    color: #fff;
-    text-shadow: 0 1px 6px rgba(0,0,0,0.4);
-    padding-bottom: 0.65rem;
-    border-bottom: 1px solid rgba(255,255,255,0.2);
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    color: var(--lp-brown);
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid rgba(43,26,19,0.15);
   }
 
-  /* Address + dock side by side */
   .hero-address-body {
     display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: space-between;
-    gap: 1rem;
-    flex-wrap: wrap;
+    gap: 0.85rem;
   }
 
-  .hero-address-row {
-    display: flex;
-    align-items: flex-start;
-    gap: 0.6rem;
-  }
-
-  .hero-address-row svg {
-    flex-shrink: 0;
-    margin-top: 2px;
-    opacity: 0.9;
-  }
+  .hero-address-row { display: flex; align-items: flex-start; gap: 0.6rem; }
+  .hero-address-row svg { flex-shrink: 0; margin-top: 3px; stroke: var(--lp-red); }
 
   .hero-address-text {
-    font-family: 'Raleway', sans-serif;
-    font-size: clamp(0.9rem, 1.1vw, 1.35rem);
+    font-size: clamp(0.95rem, 1.1vw, 1.15rem);
     font-weight: 600;
-    color: rgba(255,255,255,0.9);
+    color: var(--lp-brown);
     line-height: 1.5;
     cursor: pointer;
     text-decoration: underline;
-    text-decoration-color: rgba(255,255,255,0.4);
+    text-decoration-color: rgba(43,26,19,0.3);
     text-underline-offset: 3px;
     transition: color 0.2s ease;
   }
-
-  .hero-address-text:hover {
-    color: #e53e3e;
-    text-decoration-color: #e53e3e;
-  }
+  .hero-address-text:hover { color: var(--lp-red); text-decoration-color: var(--lp-red); }
 
   /* ── Squircle dock ── */
   .hero-dock {
@@ -201,12 +186,9 @@ get_header(); ?>
   .hero-dock-inner {
     position: absolute;
     inset: 0;
-    background: rgba(0,0,0,0.2);
-    backdrop-filter: blur(16px);
-    -webkit-backdrop-filter: blur(16px);
+    background: var(--lp-cream-2);
     border-radius: 14px;
-    border: 1px solid rgba(255,255,255,0.1);
-    box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+    border: 1px solid rgba(43,26,19,0.08);
   }
 
   .hero-dock-items {
@@ -253,92 +235,11 @@ get_header(); ?>
     pointer-events: auto;
   }
 
-  /* ── Uiverse button — red variant ── */
-  .button {
-    --stone-50: #fafaf9;
-    --stone-800: #292524;
-    --accent: #e53e3e;
-    font-size: clamp(1rem, 1.1vw, 1.4rem);
-    cursor: pointer;
-    position: relative;
-    font-family: "Rubik", sans-serif;
-    font-weight: bold;
-    line-height: 1;
-    padding: 1px;
-    transform: translate(-4px, -4px);
-    outline: 2px solid transparent;
-    outline-offset: 5px;
-    border-radius: 9999px;
-    background-color: var(--stone-800);
-    color: var(--stone-800);
-    transition: transform 150ms ease, box-shadow 150ms ease;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    box-shadow:
-      0.5px 0.5px 0 0 var(--stone-800), 1px 1px 0 0 var(--stone-800),
-      1.5px 1.5px 0 0 var(--stone-800), 2px 2px 0 0 var(--stone-800),
-      2.5px 2.5px 0 0 var(--stone-800), 3px 3px 0 0 var(--stone-800),
-      0 0 0 2px var(--stone-50), 0.5px 0.5px 0 2px var(--stone-50),
-      1px 1px 0 2px var(--stone-50), 1.5px 1.5px 0 2px var(--stone-50),
-      2px 2px 0 2px var(--stone-50), 2.5px 2.5px 0 2px var(--stone-50),
-      3px 3px 0 2px var(--stone-50), 3.5px 3.5px 0 2px var(--stone-50),
-      4px 4px 0 2px var(--stone-50);
-    &:hover {
-      transform: translate(0, 0);
-      box-shadow: 0 0 0 2px var(--stone-50);
-    }
-    &:active, &:focus-visible { outline-color: var(--accent); }
-    &:focus-visible { outline-style: dashed; }
-    & > div {
-      position: relative;
-      pointer-events: none;
-      background-color: var(--accent);
-      border: 2px solid rgba(255, 255, 255, 0.3);
-      border-radius: 9999px;
-      &::before {
-        content: "";
-        position: absolute;
-        inset: 0;
-        border-radius: 9999px;
-        opacity: 0.5;
-        background-image:
-          radial-gradient(rgb(255 255 255 / 80%) 20%, transparent 20%),
-          radial-gradient(rgb(255 255 255 / 100%) 20%, transparent 20%);
-        background-position: 0 0, 4px 4px;
-        background-size: 8px 8px;
-        mix-blend-mode: hard-light;
-        animation: dots 0.5s infinite linear;
-      }
-      & > span {
-        position: relative;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        padding: 0.75rem 1.5rem;
-        gap: 0.25rem;
-        color: #fff;
-        filter: drop-shadow(0 -1px 0 rgba(0, 0, 0, 0.25));
-        &:active { transform: translateY(2px); }
-      }
-    }
-  }
-
-  @keyframes dots {
-    0%   { background-position: 0 0, 4px 4px; }
-    100% { background-position: 8px 0, 12px 4px; }
-  }
-
   /* ── Mobile ── */
-  @media (max-width: 640px) {
-    .hero-wrap { flex-direction: column; height: auto; }
-    .hero-half,
-    .hero-wrap:has(.hero-half:hover) .hero-half,
-    .hero-wrap .hero-half:hover { flex: none; height: 50vh; min-height: 280px; }
-    .hero-divider { inset-block: auto; left: 0; right: 0; top: 50%; width: 100%; height: 3px; transform: translateY(-50%); }
-    .hero-headline { position: static; background: #111; padding: 2rem 1.5rem; }
-    .hero-headline-card { border-radius: 0; border: none; background: transparent; backdrop-filter: none; }
-    .hero-address-body { flex-direction: column; }
+  @media (max-width: 860px) {
+    .hero-wrap { min-height: 0; }
+    .hero-grid { grid-template-columns: 1fr; }
+    .hero-media { flex: none; aspect-ratio: 16 / 10; }
   }
 </style>
 
@@ -351,30 +252,53 @@ get_header(); ?>
   </defs>
 </svg>
 
-<div class="hero-wrap">
+<section class="hero-wrap" id="locations">
+
+  <!-- Corner watermarks -->
+  <img
+    class="hero-watermark hero-watermark--tl"
+    src="<?php echo esc_url( get_site_url() . '/wp-content/uploads/2026/05/Horses-_WB-Photoroom.png' ); ?>"
+    alt=""
+    aria-hidden="true"
+  >
+  <img
+    class="hero-watermark hero-watermark--tr"
+    src="<?php echo esc_url( get_site_url() . '/wp-content/uploads/2026/05/Horses-_WB-Photoroom.png' ); ?>"
+    alt=""
+    aria-hidden="true"
+  >
+  <img
+    class="hero-watermark hero-watermark--bl"
+    src="<?php echo esc_url( get_site_url() . '/wp-content/uploads/2026/05/Horses-_WB-Photoroom.png' ); ?>"
+    alt=""
+    aria-hidden="true"
+  >
+  <img
+    class="hero-watermark hero-watermark--br"
+    src="<?php echo esc_url( get_site_url() . '/wp-content/uploads/2026/05/Horses-_WB-Photoroom.png' ); ?>"
+    alt=""
+    aria-hidden="true"
+  >
 
   <!-- Headline card -->
   <div class="hero-headline">
     <div class="hero-headline-card">
-      <img
-        src="<?php echo esc_url( get_site_url() . '/wp-content/uploads/2026/05/Horses-_WB-Photoroom.png' ); ?>"
-        alt="Los Potrillos"
-        class="hero-headline-logo"
-      >
-      <h1>Welcome to Los Potrillos Mexican Restaurant</h1>
-      <p>Experience authentic Mexican flavor made fresh daily. Choose how you want to enjoy Los Potrillos whether dining in or bringing bold taste directly to your event.</p>
+      <span class="lp-eyebrow">Authentic Puebla-style Mexican food</span>
+      <h1>Puebla flavor. <em>Made in Philly.</em></h1>
+      <p>Choose how you want to enjoy Los Potrillos, whether dining in or bringing bold taste directly to your event.</p>
     </div>
   </div>
 
-  <!-- Divider -->
-  <div class="hero-divider"></div>
+  <div class="hero-grid">
 
   <!-- Left: Restaurant -->
   <div class="hero-half hero-half--restaurant">
+    <div class="hero-media">
     <video class="hero-video" autoplay muted loop playsinline>
       <source src="<?php echo esc_url( $video_restaurant ); ?>">
     </video>
     <div class="hero-overlay"></div>
+    </div>
     <div class="hero-content">
       <div class="hero-address">
         <span class="hero-address-label">Visit Our Restaurant</span>
@@ -426,8 +350,8 @@ get_header(); ?>
         </div>
       </div>
       <div class="hero-btn-wrap">
-        <a href="https://restaurant.restaurantpotrillos.com" class="button">
-          <div><span>Go to Restaurant</span></div>
+        <a href="https://restaurant.restaurantpotrillos.com" class="lp-btn">
+          Go to Restaurant <span aria-hidden="true">→</span>
         </a>
       </div>
     </div>
@@ -435,10 +359,12 @@ get_header(); ?>
 
   <!-- Right: Food Truck -->
   <div class="hero-half hero-half--foodtruck">
+    <div class="hero-media">
     <video class="hero-video" autoplay muted loop playsinline>
       <source src="<?php echo esc_url( $video_foodtruck ); ?>">
     </video>
     <div class="hero-overlay"></div>
+    </div>
     <div class="hero-content">
       <div class="hero-address">
         <span class="hero-address-label">Visit Our Food Truck</span>
@@ -485,13 +411,14 @@ get_header(); ?>
         </div>
       </div>
       <div class="hero-btn-wrap">
-        <a href="https://foodtruck.restaurantpotrillos.com/" class="button">
-          <div><span>Go to Foodtruck</span></div>
+        <a href="https://foodtruck.restaurantpotrillos.com/" class="lp-btn">
+          Go to Foodtruck <span aria-hidden="true">→</span>
         </a>
       </div>
     </div>
   </div>
+  </div>
 
-</div>
+</section>
 
 <?php get_footer(); ?>
