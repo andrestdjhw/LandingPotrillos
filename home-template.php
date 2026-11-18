@@ -14,8 +14,8 @@ get_header(); ?>
     position: relative;
     display: flex;
     flex-direction: column;
-    min-height: 100vh;
-    min-height: 100svh;
+    min-height: calc(100vh - var(--lp-footer-h, 0px));
+    min-height: calc(100svh - var(--lp-footer-h, 0px));
     padding: clamp(1rem, 2.5vh, 2rem) clamp(1rem, 4vw, 4rem) clamp(1rem, 3vh, 2.5rem);
     box-sizing: border-box;
     background: linear-gradient(135deg, var(--lp-cream) 0%, var(--lp-cream-2) 50%, var(--lp-cream-3) 100%);
